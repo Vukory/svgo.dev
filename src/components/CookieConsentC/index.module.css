@@ -1,11 +1,12 @@
 .bannerContainer {
-  --svgo-pri-bg-color: #fff;
-  --svgo-pri-fg-color: #153243;
+  --svgo-background: #fff;
+  --svgo-foreground: #153243;
   --svgo-button-hover-background-color: #1b4055;
+  --ifm-link-color: hsl(217 77% 38%) !important;
 
   z-index: 1;
   background: #fff;
-  color: var(--svgo-pri-fg-color);
+  color: var(--svgo-foreground);
   position: fixed;
   bottom: 0;
   width: 100%;

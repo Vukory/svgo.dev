@@ -19,8 +19,8 @@
   --svgo-frame-color: #dae5f2;
 
   z-index: 1;
-  font-size: 14px;
-  background-color: var(--svgo-pri-bg-color);
+  font-size: 16px;
+  background-color: var(--svgo-background);
   position: fixed;
   margin: 1rem;
   top: 100%;
