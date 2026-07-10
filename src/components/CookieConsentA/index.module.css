@@ -19,7 +19,7 @@
   --svgo-frame-color: #dae5f2;
 
   z-index: 1;
-  font-size: 14px;
+  font-size: 16px;
   background-color: var(--svgo-pri-bg-color);
   position: fixed;
   margin: 1rem;
