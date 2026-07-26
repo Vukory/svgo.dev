@@ -18,8 +18,10 @@ import styles from './index.module.css';
 
 function SpriteSheet() {
   return (
-    <svg style={{ height: 0 }}>
+    <svg width={0} height={0} aria-hidden={true}>
       <defs>
+        <path id="curve" d="M9 29q30-28 76 -13"></path>
+        <path id="curveWide" d="M6 15q30-11 80 2"></path>
         <radialGradient
           id="halftoneGradient"
           cx="0"
@@ -38,7 +40,25 @@ function SpriteSheet() {
           />
         </symbol>
       </defs>
-      <use href="#halftone" />
+      <filter id="die-cut" colorInterpolationFilters="sRGB">
+        <feMorphology operator="dilate" radius="9" in="SourceAlpha" result="dilated" />
+        <feGaussianBlur stdDeviation="4" in="dilated" result="blurred" />
+        <feColorMatrix
+          type="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 18 -7"
+          in="blurred"
+          result="smooth-shape"
+        />
+        <feFlood floodColor="#4d2e08" result="flood" />
+        <feComposite in="flood" in2="smooth-shape" operator="in" result="background" />
+        <feMerge>
+          <feMergeNode in="background" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
     </svg>
   );
 }
@@ -74,23 +94,11 @@ export default function CookieConsentB({ onAnswer, onDone }) {
           </div>
           <div className={styles.title}>
             <svg viewBox="0 0 92 30" role="heading" aria-level={2}>
-              <defs>
-                <path id="curve" d="M9 29q30-28 76 -13"></path>
-                <path id="curveWide" d="M6 15q30-11 80 2"></path>
-              </defs>
-              <text fontSize="8.2">
-                <textPath
-                  href="#curve"
-                  className={styles.curve}
-                  fill="currentColor"
-                >
+              <text fontSize="8.2" fill="currentColor">
+                <textPath href="#curve" className={styles.curve}>
                   Want some cookies?
                 </textPath>
-                <textPath
-                  href="#curveWide"
-                  className={styles.curveWide}
-                  fill="currentColor"
-                >
+                <textPath href="#curveWide" className={styles.curveWide}>
                   Want some cookies?
                 </textPath>
               </text>
