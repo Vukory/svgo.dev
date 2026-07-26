@@ -126,12 +126,12 @@
 }
 
 .title {
-  background: no-repeat url('./assets/heading-background.svg');
   position: absolute;
   top: -4%;
   left: 12%;
   width: clamp(170px, 44vw, 210px);
   aspect-ratio: 2.75;
+  filter: url("#die-cut");
   /** Due of all the curves, the bounding box for the title and text can
       sometimes overlap. We use a clip-path to limit the user-selectable area so
       they can freely interact with the text beneath any empty space. */
@@ -141,20 +141,19 @@
     color: #f4f2e5;
   }
 
-  .curveWide {
+  [href="#curveWide"] {
     display: none;
   }
 
   @media (min-width: 997px) {
-    .curve {
+    [href="#curve"] {
       display: none;
     }
 
-    .curveWide {
+    [href="#curveWide"] {
       display: block;
     }
 
-    background-image: url('./assets/heading-background-wide.svg');
     top: -6%;
     left: 21%;
     width: 260px;
