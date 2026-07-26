@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://svgo.dev/sitemap.xml
+Sitemap: https://svgo.vukory.art/sitemap.xml
