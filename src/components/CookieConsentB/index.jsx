@@ -94,13 +94,9 @@ export default function CookieConsentB({ onAnswer, onDone }) {
           </div>
           <div className={styles.title}>
             <svg viewBox="0 0 92 30" role="heading" aria-level={2}>
-              <text fontSize="8.2" fill="currentColor">
-                <textPath href="#curve" className={styles.curve}>
-                  Want some cookies?
-                </textPath>
-                <textPath href="#curveWide" className={styles.curveWide}>
-                  Want some cookies?
-                </textPath>
+              <text fontSize="9.7" fill="currentColor">
+                <textPath href="#curve">Want some cookies?</textPath>
+                <textPath href="#curveWide">Want some cookies?</textPath>
               </text>
             </svg>
           </div>
