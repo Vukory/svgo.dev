@@ -42,7 +42,7 @@
 
   &.speechBubbleWide {
     display: none;
-    max-width: 480px;
+    max-width: 30rem;
     line-height: 120%;
   }
 
@@ -63,7 +63,7 @@
     font-family:
       Winky-Rough, ui-rounded, 'Hiragino Maru Gothic ProN', Manjari, 'Arial Rounded MT',
       'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-    font-size: clamp(.9rem, 3cqw, 1rem);
+    font-size: clamp(.9rem, 3.5cqw, 1rem);
     font-weight: 700;
     color: #331E04;
   }
@@ -74,7 +74,7 @@
   left: 5.6rem;
   background-size: 100% 100%;
   margin-right: .5rem;
-  max-width: 360px;
+  max-width: 22.5rem;
   aspect-ratio: 1.15;
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@
   @media (min-width: 997px) {
     left: 10rem;
     bottom: 6rem;
-    max-width: 480px;
+    max-width: 30rem;
     aspect-ratio: 2.45;
     line-height: 120%;
   }
@@ -129,7 +129,7 @@
   position: absolute;
   top: -4%;
   left: 12%;
-  width: clamp(170px, 44vw, 210px);
+  width: clamp(11rem, 44vw, 13rem);
   aspect-ratio: 2.75;
   filter: url("#die-cut");
   /** Due of all the curves, the bounding box for the title and text can
@@ -156,20 +156,16 @@
 
     top: -6%;
     left: 21%;
-    width: 260px;
+    width: 16rem;
     clip-path: rect(0 100% 62% 0);
   }
 }
 
 .copy {
-  /* Hack to workaround issue where I don't want to specify a height, yet I must
-     for the child floating elements to be able to inherit it. Sets the height
-     to a larger value as the width gets smaller. Value is hardcoded from
-     trial-and-error. */
-  height: clamp(100%, calc((640px - 100vw)), 100vh);
+  --magic-number: 41rem;
+  --shape-margin: 1rem;
+  height: max(100%, calc(var(--magic-number) - 100vw));
   margin-bottom: 0;
-  letter-spacing: 0.03em;
-  --shape-margin: 1%;
 
   &::before {
     content: '';
@@ -177,10 +173,36 @@
     width: 50%;
     height: 100%;
     shape-margin: var(--shape-margin);
-    shape-outside: polygon(0 0, 0 100%, 100% 100%, 100% 82%, 69% 87%, 39% 87%, 15% 78%, 8% 67%, 7% 51%, 13% 38%, 25% 34%, 29% 27%, 46% 16%, 61% 15%, 100% 15%, 100% 0);
+    shape-outside: polygon(0 0,
+        100% 0,
+        100% 10%,
+        58% 10%,
+        33% 20%,
+        27% 30%,
+        10% 40%,
+        6% 50%,
+        6% 60%,
+        30% 70%,
+        48% 80%,
+        100% 80%,
+        100% 100%,
+        0 100%);
 
     @media (min-width: 997px) {
-      shape-outside: polygon(0 0, 100% 0, 100% 19%, 40% 19%, 24% 35%, 19% 53%, 23% 79%, 31% 87%, 51% 92%, 100% 88%, 100% 100%, 0 100%);
+      shape-outside: polygon(0 0,
+          100% 0,
+          100% 23%,
+          29% 23%,
+          24% 30%,
+          20% 40%,
+          18% 50%,
+          20% 60%,
+          22% 70%,
+          27% 80%,
+          27% 83%,
+          100% 83%,
+          100% 100%,
+          0 100%);
     }
   }
 
@@ -190,20 +212,49 @@
     width: 50%;
     height: 100%;
     shape-margin: var(--shape-margin);
-    shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 82%, 30% 82%, 53% 81%, 54% 76%, 62% 72%, 83% 64%, 93% 50%, 80% 29%, 57% 15%, 19% 15%, 0 15%);
+    shape-outside: polygon(100% 0,
+        0 0,
+        0 10%,
+        42% 10%,
+        67% 20%,
+        73% 30%,
+        90% 40%,
+        94% 50%,
+        94% 60%,
+        70% 70%,
+        52% 80%,
+        0 80%,
+        0 100%,
+        100% 100%);
 
     @media (min-width: 997px) {
-      shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 88%, 60% 91%, 89% 55%, 63% 25%, 39% 19%, 0 19%);
+      shape-outside: polygon(100% 0,
+          0 0,
+          0 23%,
+          71% 23%,
+          76% 30%,
+          80% 40%,
+          82% 50%,
+          80% 60%,
+          78% 70%,
+          73% 80%,
+          73% 83%,
+          0 83%,
+          0 100%,
+          100% 100%);
     }
   }
 
+  @media (min-width: 388px) { --magic-number: 42.1rem; }
+  @media (min-width: 399px) { --magic-number: 43rem; }
+
   @media (min-width: 997px) {
-    --shape-margin: 1.7%;
+    --shape-margin: .6rem;
   }
 }
 
 .buttonContainer {
-  width: 180px;
+  width: 11.25rem;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -212,13 +263,13 @@
 
 
   @media (min-width: 997px) {
-    width: 410px;
+    width: 25.625rem;
     left: 28%;
     bottom: -5rem;
     flex-direction: row;
 
     button {
-      width: 200px;
+      width: 12.5rem;
     }
   }
 }
