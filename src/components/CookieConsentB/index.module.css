@@ -61,7 +61,7 @@
   button,
   svg {
     font-family:
-      Winky-Rough, ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT',
+      Winky-Rough, ui-rounded, 'Hiragino Maru Gothic ProN', Manjari, 'Arial Rounded MT',
       'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
     font-size: clamp(.9rem, 3cqw, 1rem);
     font-weight: 700;
