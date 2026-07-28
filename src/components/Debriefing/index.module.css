@@ -22,7 +22,6 @@
   position: fixed;
   top: 100%;
   margin: 1rem;
-  font-size: 16px;
   background-color: var(--svgo-background);
   color: var(--svgo-foreground);
   max-width: 450px;
@@ -47,7 +46,7 @@
   }
 
   @media (min-width: 997px) {
-    max-width: 740px;
+    max-width: 46rem;
   }
 }
 
@@ -61,7 +60,7 @@
   position: absolute;
   border-radius: 1.25rem;
   background: var(--svgo-frame-color);
-  clip-path: path("M0 143Q132 152 264 131T495 89 660 72V660H0");
+  clip-path: path("M0 143Q132 152 264 131T495 89 1020 72V1020H0");
 }
 
 .bannerContainer::after {
@@ -69,20 +68,18 @@
   top: -160px;
   right: 0;
   width: 259px;
-  height: 172px;
+  aspect-ratio: 259 / 172;
   position: absolute;
-  background: no-repeat url("./assets/wolf.png");
-  background-position: top right;
+  background: top right / cover no-repeat url("./assets/wolf.png");
 
   @media (min-width: 997px) {
     top: unset;
     bottom: 0;
-    right: -53.5px;
-    width: 326px;
-    height: 281px;
+    right: -3.34rem;
+    width: 20rem;
+    aspect-ratio: 328 / 283;
     position: absolute;
-    background: no-repeat url("./assets/wolf-wide.png");
-    background-position: right;
+    background-image: url("./assets/wolf-wide.png");
   }
 }
 
