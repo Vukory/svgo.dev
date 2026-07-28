@@ -19,12 +19,11 @@
   --svgo-frame-color: #dae5f2;
 
   z-index: 1;
-  font-size: 16px;
   background-color: var(--svgo-background);
   position: fixed;
   margin: 1rem;
   top: 100%;
-  max-width: 660px;
+  max-width: 40rem;
   padding: 2rem;
   border-radius: 1.25rem;
   overflow: hidden;
@@ -56,7 +55,7 @@
   width: 100%;
   position: absolute;
   background: var(--svgo-frame-color);
-  clip-path: path("M0 143Q132 152 264 131T495 89 660 72V660H0");
+  clip-path: path("M0 143Q132 152 264 131T495 89 960 72V960H0");
 }
 
 .buttonContainer {
