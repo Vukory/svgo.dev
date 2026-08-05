@@ -65,9 +65,9 @@
 
 .bannerContainer::after {
   content: "";
-  top: -160px;
+  top: -9.9rem;
   right: 0;
-  width: 259px;
+  width: 16rem;
   aspect-ratio: 259 / 172;
   position: absolute;
   background: top right / cover no-repeat url("./assets/wolf.png");
