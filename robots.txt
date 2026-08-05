@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /search/?
 
 Sitemap: https://svgo.vukory.art/sitemap.xml
